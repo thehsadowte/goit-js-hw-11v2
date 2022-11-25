@@ -18,7 +18,7 @@ export class PixApi {
         safesearch: true,
         page: this.page,
         key: this.#KEY,
-        per_page: this.per_page,
+        per_page: 18,
       },
     };
 
