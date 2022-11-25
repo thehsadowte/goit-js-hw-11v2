@@ -11,13 +11,10 @@ let lightbox = new SimpleLightbox('.gallery a', {
 });
 
 const refs = {
-  form: '#search-form',
-  gallery: '.gallery',
-  loadMoreBtn: '.load-more',
+  form: document.querySelector('#search-form'),
+  gallery: document.querySelector('.gallery'),
+  loadMoreBtn: document.querySelector('.load-more'),
 };
-
-refs.form.addEventListener('submit', onSubmit);
-refs.loadMoreBtn.addEventListener('click', onLoadMore);
 
 async function onSubmit(event) {
   event.preventDefault();
@@ -82,3 +79,6 @@ function createGallery(arrayOfPhotos) {
 function createLightBox() {
   return lightbox;
 }
+
+refs.form.addEventListener('submit', onSubmit);
+refs.loadMoreBtn.addEventListener('click', onLoadMore);
