@@ -44,7 +44,7 @@ async function onSubmit(event) {
     Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
     createGallery(hits);
 
-    if (totalHits > pixApi.per_page) {
+    if (totalHits > 20) {
       refs.loadMoreBtn.classList.remove('is-hidden');
     }
   } catch (error) {
