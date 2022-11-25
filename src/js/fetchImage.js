@@ -8,6 +8,7 @@ export class PixApi {
   constructor() {
     this.query = null;
     this.page = null;
+    this.per_page = 40;
   }
   async fetchImage() {
     const searchParams = {
@@ -18,7 +19,7 @@ export class PixApi {
         safesearch: true,
         page: this.page,
         key: this.#KEY,
-        per_page: 18,
+        per_page: this.per_page,
       },
     };
 

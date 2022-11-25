@@ -44,7 +44,7 @@ async function onSubmit(event) {
     Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
     createGallery(hits);
 
-    if (totalHits > 18) {
+    if (totalHits > pixApi.per_page) {
       refs.loadMoreBtn.classList.remove('is-hidden');
     }
   } catch (error) {
@@ -60,7 +60,7 @@ async function onLoadMore() {
     const { hits, totalHits } = imageRender.data;
     createGallery(hits);
 
-    if (totalHits < 18) {
+    if (totalHits < pixApi.per_page) {
       refs.loadMoreBtn.classList.add('is-hidden');
       Notiflix.Notify.info(
         "We're sorry, but you've reached the end of search results."
