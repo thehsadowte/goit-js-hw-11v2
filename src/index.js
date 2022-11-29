@@ -59,8 +59,9 @@ async function onLoadMore() {
     const imageRender = await pixApi.fetchImage();
     const { hits, totalHits } = imageRender.data;
     createGallery(hits);
+    console.log(`This is totalHits typeof`, typeof totalHits);
 
-    if (totalHits < pixApi.per_page) {
+    if (pixApi.page > totalHits / pixApi.per_page) {
       refs.loadMoreBtn.classList.add('is-hidden');
       Notiflix.Notify.info(
         "We're sorry, but you've reached the end of search results."
